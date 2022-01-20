@@ -2,12 +2,12 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Week 2</title>
+        <title></title>
     </head>
     <body>
         <?php
-        echo 'Hello World in PHP';
+        echo 'Page 2!';
         ?>
-        <a href="page2.php">Page 2</a>
+        <a href="index.php">index</a>
     </body>
 </html>
