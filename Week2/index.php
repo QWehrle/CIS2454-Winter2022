@@ -5,7 +5,7 @@
         <title>Week 2</title>
     </head>
     <body>
-        <form action="hello.php" method="get">
+        <form action="hello.php" method="post">
             <label>Name: </label>
             <input type="text" name="name"/><br>
             <label>Preferred pronouns: </label>

@@ -1,9 +1,11 @@
 <?php
-$name = $_GET['name'];
-$pronouns = $_GET['pronouns'];
-$major = $_GET['major'];
-$experience = $_GET['experience'];
-$fun_fact = $_GET['fun_fact'];
+$name = $_POST['name'];
+$pronouns = $_POST['pronouns'];
+$major = $_POST['major'];
+$experience = $_POST['experience'];
+$fun_fact = $_POST['fun_fact'];
+
+$fun_fact = "Eric is a nerd!";
 
 ?>
 
