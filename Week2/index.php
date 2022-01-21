@@ -18,6 +18,15 @@
             <input type="text" name="fun_fact"/><br>
             <input type="submit" value="Submit"/>
         </form>
+        <form action="pizza.php" method="get">
+            <label>Number of people at the party: </label>
+            <input type="text" name="people_at_party"/><br>
+            <label>Average slices per person: </label>
+            <input type="text" name="slices_per_person"/><br>
+            <label>Pizza Size ( small, medium, large ): </label>
+            <input type="text" name="size"/><br>
+            <input type="submit" value="Pizza Time!"/>
+        </form>
         <a href="page2.php">Page 2</a>
     </body>
 </html>
