@@ -88,17 +88,17 @@ if ($gross_income == 0 || $adjusted_gross_income == 0) {
         <title>2021 Married Income Tax Estimator</title>
     </head>
     <body>
-<?php echo $name ?><br>
+        <?php echo $name ?><br>
 
-<?php echo "Taxes owed at 10% : $ $taxes_owed_at_10_percent" ?><br>
+        <?php echo "Taxes owed at 10% : $ $taxes_owed_at_10_percent" ?><br>
 
-<?php echo "Taxes owed at 12% : $ $taxes_owed_at_12_percent" ?><br>
+        <?php echo "Taxes owed at 12% : $ $taxes_owed_at_12_percent" ?><br>
 
-<?php echo "Taxes owed at 22% : $ $taxes_owed_at_22_percent" ?><br>
+        <?php echo "Taxes owed at 22% : $ $taxes_owed_at_22_percent" ?><br>
 
-<?php echo "Taxes owed at 24% : $ $taxes_owed_at_24_percent" ?><br>
+        <?php echo "Taxes owed at 24% : $ $taxes_owed_at_24_percent" ?><br>
 
-<?php echo "Taxes owed at 32% : $ $taxes_owed_at_32_percent" ?><br>
+        <?php echo "Taxes owed at 32% : $ $taxes_owed_at_32_percent" ?><br>
 
         <?php echo "Taxes owed at 35% : $ $taxes_owed_at_35_percent" ?><br>
 
