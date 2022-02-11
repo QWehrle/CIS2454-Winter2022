@@ -1,6 +1,9 @@
 <?php include './views/header.php' ?>
         
         <h2>Items</h2>
+        <?php if ( $name != null ){
+            echo "searching for $name" ;    
+        } ?>
         <table>
             <tr>
                 <th>SKU</th>
@@ -18,6 +21,13 @@
                 </tr>
             <?php endforeach ?>
         </table>
+        <br>
+        <form action="index.php" method="get">
+            <label>Name</label>
+            <input type="text" name="name"/><br>
+            <input type="hidden" name="action" value="list_items"/>
+            <input type="submit" value="Search Items"/>
+        </form>
         <br>
         <form action="index.php" method="post">
             <label>Item SKU</label>

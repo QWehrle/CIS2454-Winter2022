@@ -1,10 +1,19 @@
 <?php
 
-function get_items() {
+function get_items($name) {
     global $database;
+    
     $query = 'select * from item';
+    if ( $name != null ){
+        // when using like % is a wildcard
+        $query .= ' where name like :name';
+        $name = '%' . $name . '%';
+        $statement = $database->prepare($query);
+        $statement->bindValue(':name', $name);
+    } else{
+        $statement = $database->prepare($query);
+    }
 
-    $statement = $database->prepare($query);
     $statement->execute();
 
     $items = $statement->fetchAll();
@@ -20,7 +29,7 @@ function add_item($sku, $name, $quantity, $price) {
     // substitions to avoid SQL injection attacks
     // allows you to do safe substitutions with named bindings later
     $query = "INSERT INTO item (sku, name, quantity, price) "
-            . "VALUES (:sku, :name, :quantity, :price)";
+            . " VALUES (:sku, :name, :quantity, :price)";
 
     // bad way - VERY dangerous
     //$query = "INSERT INTO item (sku, name, quantity, price) "
@@ -58,7 +67,7 @@ function update_item($sku, $name, $quantity, $price) {
     // substitions to avoid SQL injection attacks
     // allows you to do safe substitutions with named bindings later
     $query = "UPDATE item SET name = :name, quantity = :quantity, "
-            . "price = :price WHERE sku = :sku";
+            . " price = :price WHERE sku = :sku";
 
     $statement = $database->prepare($query);
     $statement->bindValue(':sku', $sku);

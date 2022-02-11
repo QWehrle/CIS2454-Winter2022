@@ -5,8 +5,7 @@ require './models/item_model.php';
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == null) {
-    $action = filter_input(INPUT_GET, 'action');
-    {
+    $action = filter_input(INPUT_GET, 'action'); {
         if ($action == null) {
             $action = 'list_items';
         }
@@ -14,8 +13,14 @@ if ($action == null) {
 }
 
 if ($action == 'list_items') {
-    $items = get_items();
-    include './views/item_list.php';
+    $name = htmlspecialchars(filter_input(INPUT_GET, 'name'));
+    try {
+        $items = get_items($name);
+        include './views/item_list.php';
+    } catch (Exception $ex) {
+        $message = $ex->getMessage();
+        include('./views/error.php');
+    }
 } else if ($action == 'add_item') {
     $sku = htmlspecialchars(filter_input(INPUT_POST, 'sku'));
     $name = htmlspecialchars(filter_input(INPUT_POST, 'name'));
@@ -28,6 +33,7 @@ if ($action == 'list_items') {
     } else {
         try {
             add_item($sku, $name, $quantity, $price);
+            // redirect back to the the index page with a GET, so refresh doesn't warn
             header("Location: .");
         } catch (Exception $ex) {
             $message = $ex->getMessage();
@@ -52,9 +58,9 @@ if ($action == 'list_items') {
             include('./views/error.php');
         }
     }
-}else if ($action == 'delete_item') {
+} else if ($action == 'delete_item') {
     $sku = htmlspecialchars(filter_input(INPUT_POST, 'sku'));
-    
+
     if ($sku == null) {
         $message = "Missing or invalid SKU";
         include('./views/error.php');
