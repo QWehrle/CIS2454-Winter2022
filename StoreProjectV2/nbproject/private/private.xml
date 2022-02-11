@@ -3,13 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/EricC/Documents/GitHub/CIS2454-Winter2022/StoreProject/database.php</file>
-            <file>file:/C:/Users/EricC/Documents/GitHub/CIS2454-Winter2022/StoreProject/update_item.php</file>
-            <file>file:/C:/Users/EricC/Documents/GitHub/CIS2454-Winter2022/StoreProject/add_transaction.php</file>
-            <file>file:/C:/Users/EricC/Documents/GitHub/CIS2454-Winter2022/StoreProject/index.php</file>
-            <file>file:/C:/Users/EricC/Documents/GitHub/CIS2454-Winter2022/StoreProject/delete_item.php</file>
-            <file>file:/C:/Users/EricC/Documents/GitHub/CIS2454-Winter2022/StoreProject/add_item.php</file>
-            <file>file:/C:/Users/EricC/Documents/GitHub/CIS2454-Winter2022/StoreProject/add_line_item.php</file>
+            <file>file:/C:/Users/EricC/Documents/GitHub/CIS2454-Winter2022/StoreProjectV2/views/item_sku_select.php</file>
+            <file>file:/C:/Users/EricC/Documents/GitHub/CIS2454-Winter2022/StoreProjectV2/views/item_list.php</file>
+            <file>file:/C:/Users/EricC/Documents/GitHub/CIS2454-Winter2022/StoreProjectV2/views/error.php</file>
+            <file>file:/C:/Users/EricC/Documents/GitHub/CIS2454-Winter2022/StoreProjectV2/models/database.php</file>
+            <file>file:/C:/Users/EricC/Documents/GitHub/CIS2454-Winter2022/StoreProjectV2/views/footer.php</file>
+            <file>file:/C:/Users/EricC/Documents/GitHub/CIS2454-Winter2022/StoreProjectV2/models/item_model.php</file>
+            <file>file:/C:/Users/EricC/Documents/GitHub/CIS2454-Winter2022/StoreProjectV2/add_line_item.php</file>
+            <file>file:/C:/Users/EricC/Documents/GitHub/CIS2454-Winter2022/StoreProjectV2/index.php</file>
+            <file>file:/C:/Users/EricC/Documents/GitHub/CIS2454-Winter2022/StoreProjectV2/views/header.php</file>
         </group>
     </open-files>
 </project-private>
