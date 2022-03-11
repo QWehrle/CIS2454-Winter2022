@@ -16,10 +16,10 @@ if ($name != null) {
     <!-- loops over the collection as single item -->
 <?php foreach ($items as $item) : ?>
         <tr>
-            <td> <?php echo $item['sku'] ?></td>
-            <td> <?php echo $item['name'] ?></td>
-            <td> <?php echo $item['quantity'] ?></td>
-            <td> <?php echo $item['price'] ?></td>
+            <td> <?php echo $item->get_sku() ?></td>
+            <td> <?php echo $item->get_name() ?></td>
+            <td> <?php echo $item->get_quantity() ?></td>
+            <td> <?php echo $item->get_price() ?></td>
         </tr>
 <?php endforeach ?>
 </table>

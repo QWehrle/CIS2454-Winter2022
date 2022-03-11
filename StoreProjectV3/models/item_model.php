@@ -1,5 +1,7 @@
 <?php
 
+require "Item.php";
+
 function get_items($name) {
     global $database;
     
@@ -16,14 +18,22 @@ function get_items($name) {
 
     $statement->execute();
 
-    $items = $statement->fetchAll();
+    $item_rows = $statement->fetchAll();
     
     $statement->closeCursor();
+    
+    $items = array();
+    
+    foreach ( $item_rows as $item_row ){
+        $item = new Item($item_row['sku'], $item_row['name'],
+                $item_row['quantity'], $item_row['price']);
+        $items[] = $item;
+    }
 
     return $items;
 }
 
-function add_item($sku, $name, $quantity, $price) {
+function add_item($item) {
     global $database;
 
     // substitions to avoid SQL injection attacks
@@ -36,17 +46,17 @@ function add_item($sku, $name, $quantity, $price) {
     //        . "VALUES ($sku, $name, $quantity, $price)";
 
     $statement = $database->prepare($query);
-    $statement->bindValue(':sku', $sku);
-    $statement->bindValue(':name', $name);
-    $statement->bindValue(':quantity', $quantity);
-    $statement->bindValue(':price', $price);
+    $statement->bindValue(':sku', $item->get_sku());
+    $statement->bindValue(':name', $item->get_name());
+    $statement->bindValue(':quantity', $item->get_quantity());
+    $statement->bindValue(':price', $item->get_price());
 
     $statement->execute();
     
     $statement->closeCursor();
 }
 
-function delete_item($sku) {
+function delete_item($item) {
     global $database;
 
     // substitions to avoid SQL injection attacks
@@ -54,14 +64,14 @@ function delete_item($sku) {
     $query = "delete from item WHERE sku = :sku";
 
     $statement = $database->prepare($query);
-    $statement->bindValue(':sku', $sku);
+    $statement->bindValue(':sku', $item->get_sku());
 
     $statement->execute();
     
     $statement->closeCursor();
 }
 
-function update_item($sku, $name, $quantity, $price) {
+function update_item($item) {
     global $database;
 
     // substitions to avoid SQL injection attacks
@@ -70,10 +80,10 @@ function update_item($sku, $name, $quantity, $price) {
             . " price = :price WHERE sku = :sku";
 
     $statement = $database->prepare($query);
-    $statement->bindValue(':sku', $sku);
-    $statement->bindValue(':name', $name);
-    $statement->bindValue(':quantity', $quantity);
-    $statement->bindValue(':price', $price);
+    $statement->bindValue(':sku', $item->get_sku());
+    $statement->bindValue(':name', $item->get_name());
+    $statement->bindValue(':quantity', $item->get_quantity());
+    $statement->bindValue(':price', $item->get_price());
 
     $statement->execute();
     

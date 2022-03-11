@@ -1,5 +1,7 @@
 <?php
 
+require_once './utilities/validate_admin_is_logged_in.php';
+
 require_once './models/database.php'; // essentially copies the database.php file on top
 require './models/customer_model.php';
 
